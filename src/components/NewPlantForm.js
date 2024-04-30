@@ -17,7 +17,11 @@ function NewPlantForm({onSubmit}) {
 function handleSubmit(e){
   e.preventDefault()
   onSubmit(formData)
-  
+  setFormData({
+    name: "",
+    image: "",
+    price: ""
+  })
 }
 
 

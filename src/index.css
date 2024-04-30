@@ -26,6 +26,11 @@ button {
 button.primary {
   background-color: var(--green);
   color: white;
+  border: 1px solid black;
+}
+
+button.primary:hover {
+  background-color: rgb(60, 118, 60);
 }
 
 .app {
@@ -111,6 +116,11 @@ input:focus {
 
 .card button {
   margin-top: 0.5rem;
+}
+
+.submitNewPrice {
+width: 50%;
+border: 1px solid black;
 }
 
 @media (min-width: 768px) {

@@ -30,6 +30,10 @@ const foundPlants = plants.filter(plant => {
   return plant.name.toLowerCase().includes(search.toLowerCase())
 })
 
+function handleDelete(plantDeleted) {
+  const updatedPlants = plants.filter(plant => plant.id !== plantDeleted.id)
+  setPlants(updatedPlants)
+}
 
 
 
@@ -37,7 +41,7 @@ const foundPlants = plants.filter(plant => {
     <main>
       <NewPlantForm onSubmit={handleNewPlant}/>
       <Search setSearch={setSearch} searchInput={search}/>
-      <PlantList plants={foundPlants}/>
+      <PlantList onDelete={handleDelete} plants={foundPlants} setPlants={setPlants}/>
     </main>
   );
 }

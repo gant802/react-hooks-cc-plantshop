@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Pothos",
       "image": "./images/pothos.jpg",
-      "price": 12.11
+      "price": "23.49"
     },
     {
       "id": 5,
@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Tree",
+      "image": "https://science4fun.info/wp-content/uploads/2017/05/tree.jpg",
+      "price": "15.99",
+      "id": 8
     }
   ]
 }
