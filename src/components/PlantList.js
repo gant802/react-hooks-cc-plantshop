@@ -3,7 +3,7 @@ import PlantCard from "./PlantCard";
 
 function PlantList({plants, onDelete, setPlants}) {
   
-
+//? Renders a plant for every plant in the foundPlants variable
   const plantsListed = plants.map(plant => {
     return <PlantCard onDelete={onDelete} key={plant.id} plant={plant} setPlants={setPlants} renderedPlants={plants}/>
   })

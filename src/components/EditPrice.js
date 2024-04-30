@@ -1,12 +1,15 @@
 import React, {useState} from "react"
 
 
-
+//! This component only renders on the plant that "edit price" was clicked on
 function Edit({plantId, setIdOfPlant, setPlants, renderedPlants}) {
+
+    //? Setting state for the new plant price
     const [newPlantPrice, setNewPlantPrice] = useState({
       price: ""
     })
     
+    //? Updates state of the new price
     function handleChangePrice(e) {
       setNewPlantPrice({
         ...newPlantPrice,
@@ -15,6 +18,7 @@ function Edit({plantId, setIdOfPlant, setPlants, renderedPlants}) {
       
     }
   
+    //? PATCH request to update the db.json and display updated price on the DOM immediatly
   function handleSubmit() {
     setIdOfPlant("")
     fetch(`http://localhost:6001/plants/${plantId}`, {

@@ -9,13 +9,15 @@ function PlantPage() {
 const [plants, setPlants] = useState([])
 const [search, setSearch] = useState('')
 
+//? Fetch data from API to setPlants state
 useEffect(() => {
 fetch(API)
 .then(res => res.json())
 .then(data => setPlants(data))
 }, [])
 
-function handleNewPlant(newPlant) {
+//? Adds new plant to db.json with POST method and updates the plants state w/ added plant
+function handleNewPlant(newPlant) { //! Passed up from NewPlantForm
 fetch(API, {
   method: "POST",
   headers: {"Content-Type": "Application/JSON",
@@ -26,11 +28,13 @@ body: JSON.stringify(newPlant)
 .then(data => setPlants([...plants, data]))
 }
 
+//? Finds the plants that match the search input (passed into PlantList to be rendered)
 const foundPlants = plants.filter(plant => {
   return plant.name.toLowerCase().includes(search.toLowerCase())
 })
 
-function handleDelete(plantDeleted) {
+//? Sets plants state without using the deleted plant
+function handleDelete(plantDeleted) {   //! Passed up from PlantList
   const updatedPlants = plants.filter(plant => plant.id !== plantDeleted.id)
   setPlants(updatedPlants)
 }

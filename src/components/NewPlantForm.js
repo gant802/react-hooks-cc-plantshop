@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 
 function NewPlantForm({onSubmit}) {
+
+  //? Setting initial formData state
   const [formData, setFormData] = useState({
     name: "",
     image: "",
     price: ""
   })
 
+  //? Updating formData state as user types
   function handleFormChange(e){
     setFormData({
       ...formData,
@@ -14,6 +17,7 @@ function NewPlantForm({onSubmit}) {
     })
   }
 
+  //? Passes new plant up to parent on form submit
 function handleSubmit(e){
   e.preventDefault()
   onSubmit(formData)

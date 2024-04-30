@@ -2,6 +2,8 @@ import React from "react";
 
 function Search({setSearch, searchInput}) {
 
+
+  //? Sets the search state in parent component to the value of what is typed
   function handleSearchChange(e) {
  return setSearch(e.target.value)
   }
